@@ -9,10 +9,10 @@ const client = new OpenAI({
   apiKey: process.env['OPENAI_API_KEY'], // This is the default and can be omitted
 });
 
+let parseCount = 1;
+
 // Subscribe to a stream of messages
 streamr.subscribe("streams.dimo.eth/firehose/weather", async (msg: any) => {
-  let parseCount = 1;
-
   // Handle incoming messages
   console.log(`Incoming msg: ${JSON.stringify(msg)}`);
 
